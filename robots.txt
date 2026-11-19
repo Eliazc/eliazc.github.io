@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elimanee.github.io/portfolio/sitemap.xml
