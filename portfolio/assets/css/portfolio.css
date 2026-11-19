@@ -1,0 +1,106 @@
+/* =========================================================
+   Tuturu OS — extension "Portfolio E5"
+   S'ajoute APRÈS os.css, sans le modifier.
+   ========================================================= */
+
+/* Polices en chemin relatif : le portfolio marche aussi dans un sous-dossier
+   (GitHub Pages, VM du lycée...). Mettre les .woff2 dans assets/fonts/. */
+@font-face { font-family: "Tuturu Rounded"; src: url("../fonts/m-plus-rounded-1c-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Tuturu Rounded"; src: url("../fonts/m-plus-rounded-1c-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Tuturu Rounded"; src: url("../fonts/m-plus-rounded-1c-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+
+/* Titre au-dessus de la grille */
+.pf-title { width: min(1180px, 100% - 48px); margin: 28px auto 0; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.pf-title h1 { margin: 0; font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; }
+.pf-title p { margin: 0; color: var(--ink-soft); font-weight: 700; }
+
+.screen .cap { text-align: center; }
+
+/* Badge rond du dock (lettre ou icône) */
+.round span.glyph { font-size: 1.6rem; line-height: 1; }
+
+/* ---------- Écrans des chaînes du portfolio ---------- */
+.scr-skills { background: linear-gradient(#F4F0FA, #fff); }
+.scr-skills .bars { width: 70%; display: grid; gap: 6px; margin-bottom: 16%; }
+.scr-skills .bars i { display: block; height: 8px; border-radius: 99px; background: var(--rim); position: relative; overflow: hidden; }
+.scr-skills .bars i::after { content: ""; position: absolute; inset: 0; width: var(--w); border-radius: inherit; background: linear-gradient(90deg, var(--plum), var(--glow)); animation: fill 2.4s ease-out infinite alternate; }
+@keyframes fill { from { width: 10%; } }
+
+.scr-term { background: #14132A; color: #9FE6B8; font-family: ui-monospace, monospace; padding: 10px 12px; place-items: start !important; }
+.scr-term pre { margin: 0; font-size: .7rem; line-height: 1.45; white-space: pre; }
+.scr-term .caret { display: inline-block; width: 7px; height: .9em; background: #9FE6B8; vertical-align: -2px; animation: blink 1s steps(1) infinite; }
+.scr-term .cap { color: #fff; font-family: var(--font); }
+
+.scr-stage { background: linear-gradient(160deg, #DCE7F5, #fff); }
+.scr-stage .cal { width: 46%; aspect-ratio: 5 / 4; margin-bottom: 15%; background: #fff; border: 2px solid var(--rim); border-radius: 10px; display: grid; grid-template-rows: 26% 1fr; overflow: hidden; box-shadow: 0 2px 0 var(--rim-dark); }
+.scr-stage .cal b { background: var(--plum); color: #fff; font-size: .7rem; display: grid; place-items: center; }
+.scr-stage .cal span { display: grid; place-items: center; font-weight: 800; font-size: clamp(.9rem, 1.6vw, 1.4rem); }
+
+.scr-cv { background: #EEF0F3; }
+.scr-cv .sheet-doc { width: 26%; aspect-ratio: 3 / 4; margin-bottom: 14%; background: #fff; border-radius: 6px; box-shadow: 0 3px 0 var(--rim-dark), 0 0 0 2px var(--rim); padding: 9% 8%; display: grid; gap: 5px; align-content: start; animation: float 3s ease-in-out infinite alternate; }
+.scr-cv .sheet-doc i { display: block; height: 5px; border-radius: 3px; background: var(--rim); }
+.scr-cv .sheet-doc i:first-child { width: 55%; height: 8px; background: var(--plum); }
+.scr-cv .sheet-doc i:nth-child(3) { width: 80%; } .scr-cv .sheet-doc i:nth-child(5) { width: 65%; }
+@keyframes float { to { transform: translateY(-6px); } }
+
+.scr-certif { background: radial-gradient(circle at 50% 40%, #FFF7E0, #F3E2B6); }
+.scr-certif .medal { width: 30%; aspect-ratio: 1; margin-bottom: 16%; border-radius: 50%; background: conic-gradient(#E9B949, #FFF0B8, #E9B949, #C9922A, #E9B949); box-shadow: 0 0 0 4px #fff, 0 3px 0 4px #C9922A; display: grid; place-items: center; font-weight: 800; font-size: clamp(1rem, 2vw, 1.8rem); color: #7A5410; animation: wobble 2.6s ease-in-out infinite; }
+@keyframes wobble { 50% { transform: rotate(-8deg) scale(1.04); } }
+.scr-certif .cap { color: #6B4A12; }
+
+.scr-docs { background: linear-gradient(#F7F7FB, #ECEEF4); }
+.scr-docs .books { display: flex; align-items: flex-end; gap: 4px; height: 46%; margin-bottom: 16%; }
+.scr-docs .books i { width: 14px; border-radius: 3px 3px 1px 1px; background: var(--c); height: var(--h); box-shadow: inset -3px 0 0 rgba(0,0,0,.12); }
+.scr-docs .books i:nth-child(3) { transform: rotate(8deg); transform-origin: bottom left; }
+
+.scr-table { background: #fff; padding: 12px; }
+.scr-table .grid { width: 100%; height: 72%; margin-bottom: 14%; display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
+.scr-table .grid i { border-radius: 4px; background: var(--silver); }
+.scr-table .grid i.on { background: var(--glow); animation: pop 3s ease-in-out infinite; animation-delay: var(--d, 0s); }
+@keyframes pop { 0%, 70%, 100% { opacity: 1; } 85% { opacity: .35; } }
+
+.scr-contact { background: linear-gradient(160deg, #2B2A4A, var(--ink)); }
+.scr-contact .env { width: 40%; aspect-ratio: 3 / 2; margin-bottom: 16%; position: relative; background: #fff; border-radius: 6px; overflow: hidden; animation: float 2.2s ease-in-out infinite alternate; }
+.scr-contact .env::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom right, transparent 49%, var(--rim) 50%, transparent 52%), linear-gradient(to bottom left, transparent 49%, var(--rim) 50%, transparent 52%); background-size: 50% 100%; background-repeat: no-repeat; background-position: left, right; }
+.scr-contact .cap { color: #fff; }
+
+.scr-legal { background: #F2F3F5; }
+.scr-skills .cap, .scr-stage .cap, .scr-cv .cap, .scr-docs .cap, .scr-table .cap, .scr-legal .cap { color: var(--ink); }
+.scr-legal .scale { font-size: clamp(1.8rem, 3.2vw, 2.6rem); margin-bottom: 16%; color: var(--plum); font-weight: 800; }
+
+/* ---------- Contenu des pages ---------- */
+.todo { display: inline-block; padding: 0 .45em; border-radius: 6px; background: #FFF1C9; border: 1px dashed #D9A93B; color: #6B4A12; font-weight: 700; }
+.ch-panel .todo { font-size: .92em; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: .4em 0 0; list-style: none; }
+.chips li { font-size: .78rem; font-weight: 800; padding: .2em .8em; border-radius: var(--r-pill); background: #FBF1F5; border: 2px solid #EBCADB; color: var(--plum); }
+
+.real { border: 2px solid var(--rim); border-radius: 20px; padding: clamp(16px, 3vw, 26px); margin: 18px 0; background: linear-gradient(#fff, #FAFBFC); }
+.real > h2:first-child, .real > header h2 { margin-top: 0; }
+.real header { display: flex; gap: 12px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; }
+.real .tag { flex: none; font-size: .75rem; font-weight: 800; padding: .3em .9em; border-radius: var(--r-pill); color: #fff; background: var(--plum); }
+.real .tag.perso { background: var(--ink-soft); }
+.real .tag.stage { background: #3E5C8A; }
+.real dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 1em 0; }
+.real dt { font-weight: 800; color: var(--ink-soft); }
+.real dd { margin: 0; }
+@media (max-width: 640px) { .real dl { grid-template-columns: 1fr; } .real dd { margin-bottom: 6px; } }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 6px; }
+
+.timeline { list-style: none; margin: 1em 0; padding: 0 0 0 22px; border-left: 3px solid var(--rim); }
+.timeline li { position: relative; margin: 0 0 18px; }
+.timeline li::before { content: ""; position: absolute; left: -31px; top: 6px; width: 15px; height: 15px; border-radius: 50%; background: #fff; border: 3px solid var(--glow); }
+.timeline strong { display: block; }
+.timeline small { color: var(--muted); font-weight: 700; }
+
+.skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 1em 0; }
+.skill { border: 2px solid var(--rim); border-radius: 16px; padding: 14px 16px; background: linear-gradient(#fff, #F6F7F9); }
+.skill h3 { margin: 0 0 .3em !important; font-size: 1rem !important; }
+.skill ul { margin: 0; padding-left: 1.1em; font-size: .92rem; }
+
+.synth td.c, .synth th.c { text-align: center; width: 9%; }
+.synth td.c { font-weight: 800; color: var(--plum); font-size: 1.1rem; }
+.synth td.c.gap { color: var(--rim-dark); }
+
+.legend { font-size: .85rem; color: var(--ink-soft); }
